@@ -34,4 +34,8 @@ export class ItemsListComponent implements OnInit {
     this.afazerApi.addItem(this.titleInput).subscribe(() => this.listItems());
   }
 
+  deleteItem(itemId: string){
+    this.afazerApi.deleteItem(itemId).subscribe(() => this.listItems());
+  }
+
 }

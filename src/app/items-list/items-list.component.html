@@ -1,9 +1,11 @@
 <input id='titleInput' name='titleInput' [(ngModel)]='titleInput' placeholder='type a task' />
 <button (click)='addItem()'>+</button>
-<div id='itemsList'>
-    <div *ngFor='let item of itemsList'>
-        <h3>{{item.title}}</h3>
+
+<div id='itemsList' *ngFor='let item of itemsList'>
+    <div id='itemDiv'>
+        <h2>{{item.title}}</h2>
         <p>[Created: {{item.createdAt}} | Last Update: {{item.updatedAt}}]</p>
+        <button (click)='deleteItem(item._id)' >x</button>
     </div>
 </div>
 
