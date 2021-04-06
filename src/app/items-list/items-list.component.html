@@ -1,1 +1,9 @@
-<p *ngFor='let item of itemsList.result'>{{item.title}}</p>
+<input id='titleInput' name='titleInput' [(ngModel)]='titleInput' placeholder='type a task' />
+<button (click)='addItem()'>+</button>
+<div id='itemsList'>
+    <div *ngFor='let item of itemsList'>
+        <h3>{{item.title}}</h3>
+        <p>[Created: {{item.createdAt}} | Last Update: {{item.updatedAt}}]</p>
+    </div>
+</div>
+

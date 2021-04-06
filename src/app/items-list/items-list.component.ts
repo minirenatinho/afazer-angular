@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
-import { AfazerApiService } from '../afazer-api.service'
+import { AfazerApiService } from '../afazer-api.service';
+import { Item } from '../item';
+import { ListItemsResponse } from '../list-items-response';
 
 @Component({
   selector: 'app-items-list',
@@ -9,7 +11,8 @@ import { AfazerApiService } from '../afazer-api.service'
 })
 export class ItemsListComponent implements OnInit {
 
-  itemsList: any
+  @Input() titleInput: string = '';
+  itemsList: Array<Item> = [];
 
   constructor(private afazerApi: AfazerApiService) { }
 
@@ -18,7 +21,17 @@ export class ItemsListComponent implements OnInit {
   }
 
   listItems(){
-    this.afazerApi.listItems().subscribe(items => this.itemsList = items);
+    this.afazerApi.listItems().subscribe(items => {
+      items.result.map(item => {
+        item.createdAt = new Date(item.createdAt).toLocaleDateString();
+        item.updatedAt = new Date(item.updatedAt).toLocaleDateString();
+      });
+      this.itemsList = items.result.reverse();
+    });
+  }
+
+  addItem(){
+    this.afazerApi.addItem(this.titleInput).subscribe(() => this.listItems());
   }
 
 }
