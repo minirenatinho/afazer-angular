@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { AfazerApiService } from '../afazer-api.service';
 import { Item } from '../item';
-import { ListItemsResponse } from '../list-items-response';
 
 @Component({
   selector: 'app-items-list',
