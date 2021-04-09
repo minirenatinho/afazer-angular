@@ -1,5 +1,7 @@
 #itemDiv {
     padding: 1px 0px 10px 0px;
+    float: left;
+    width: 20%;
 }
 
 #itemDiv:hover {
