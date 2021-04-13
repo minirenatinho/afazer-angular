@@ -2,7 +2,7 @@
 <button (click)='addItem()'>+</button>
 
 <div id='itemsList'>
-    <div id='itemDiv' *ngFor='let item of itemsList' (click)='editItem()'>
+    <div id='itemDiv' *ngFor='let item of itemsList' (click)='editItem(item)'>
         <h2>{{item.title}}</h2>
         <p>[Created: {{item.createdAt}} | Last Update: {{item.updatedAt}}]</p>
         <button (click)='deleteItem(item._id)' >x</button>

@@ -1,5 +1,8 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, Input } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
+import { AfazerApiService } from '../afazer-api.service';
+import { Item } from '../item';
 
 @Component({
   selector: 'edit-item-modal',
@@ -8,14 +11,27 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class EditItemModalComponent implements OnInit {
 
+  @Input() titleInput: string;
+
   constructor(
+    private afazerApi: AfazerApiService,
     private matDialogRef: MatDialogRef<EditItemModalComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: { title: string }) { }
+    @Inject(MAT_DIALOG_DATA) public data: { item: Item }) {
+      this.titleInput = data.item.title;
+    }
 
   ngOnInit(): void {
   }
 
-  close(){
+  saveChanges(){
+    this.data.item.title = this.titleInput;
+
+    this.afazerApi.editItem(this.data.item).subscribe(() => {
+      this.matDialogRef.close();
+    });
+  }
+
+  discartChanges() {
     this.matDialogRef.close();
   }
 

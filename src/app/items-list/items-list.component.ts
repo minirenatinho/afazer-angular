@@ -41,10 +41,16 @@ export class ItemsListComponent implements OnInit {
     });
   }
 
-  editItem(){
-    this.dialog.open(EditItemModalComponent, {
+  editItem(item: Item){
+    const refDialog = this.dialog.open(EditItemModalComponent, {
+      disableClose: true,
       width: '100%',
-      height: '100px'
+      height: '100px',
+      data: { item }
+    });
+
+    refDialog.afterClosed().subscribe(() => {
+      this.listItems;
     });
   }
 

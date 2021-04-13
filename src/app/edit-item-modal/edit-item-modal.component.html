@@ -1,5 +1,5 @@
-<input />
+<input id='titleInputModal' name='titleInputModal' [(ngModel)]='titleInput' />
 <div>
-    <button mat-button (click)='close()'>Save and Close</button>
-    <button mat-button (click)='close()'>Discart Changes</button>
+    <button mat-button (click)='saveChanges()'>Save and Close</button>
+    <button mat-button (click)='discartChanges()'>Discart Changes</button>
 </div>
