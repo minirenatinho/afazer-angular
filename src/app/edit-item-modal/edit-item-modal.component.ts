@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'edit-item-modal',
@@ -8,7 +8,9 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class EditItemModalComponent implements OnInit {
 
-  constructor(private matDialogRef: MatDialogRef<EditItemModalComponent>) { }
+  constructor(
+    private matDialogRef: MatDialogRef<EditItemModalComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: { title: string }) { }
 
   ngOnInit(): void {
   }
