@@ -1,3 +1,30 @@
 input {
+    background: transparent;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    outline: none;
     width: 100%;
+    min-height: 30px;
+    margin-bottom: 20px;
+}
+
+.button {
+    background: rgba(255, 255, 255, 0.158);
+    font-weight: bold;
+    font-size: 20px;
+    width: 30%;
+    margin-right: 20px;
+}
+
+#save-button {
+    color: rgb(25, 190, 25);
+}
+
+#discard-button {
+    color: yellow;
+}
+
+#delete-button {
+    color: rgb(214, 29, 29);
 }

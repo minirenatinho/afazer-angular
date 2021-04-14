@@ -45,17 +45,13 @@ export class ItemsListComponent implements OnInit {
     const refDialog = this.dialog.open(EditItemModalComponent, {
       disableClose: true,
       width: '100%',
-      height: '100px',
+      panelClass: 'custom-dialog-container',
       data: { item }
     });
 
     refDialog.afterClosed().subscribe(() => {
-      this.listItems;
+      this.listItems();
     });
-  }
-
-  deleteItem(itemId: string){
-    this.afazerApi.deleteItem(itemId).subscribe(() => this.listItems());
   }
 
 }

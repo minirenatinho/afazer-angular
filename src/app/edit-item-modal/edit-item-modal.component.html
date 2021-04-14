@@ -1,5 +1,6 @@
 <input id='titleInputModal' name='titleInputModal' [(ngModel)]='titleInput' (keyup.enter)='saveChanges()' />
-<div>
-    <button mat-button (click)='saveChanges()'>Save and Close</button>
-    <button mat-button (click)='discartChanges()'>Discart Changes</button>
+    <div class='buttons'>
+        <button id='save-button' class='button' mat-button (click)='saveChanges()'>SAVE</button>
+        <button id='discard-button' class='button' mat-button (click)='discardChanges()'>DISCARD CHANGES</button>
+        <button id='delete-button' class='button' (click)='deleteItem()'>DELETE</button>
 </div>

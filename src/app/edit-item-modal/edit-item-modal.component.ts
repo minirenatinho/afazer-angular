@@ -31,8 +31,16 @@ export class EditItemModalComponent implements OnInit {
     });
   }
 
-  discartChanges() {
+  discardChanges() {
     this.matDialogRef.close();
+  }
+
+  deleteItem() {
+    this.data.item.title = this.titleInput;
+
+    this.afazerApi.deleteItem(this.data.item._id).subscribe(() => {
+      this.matDialogRef.close();
+    });
   }
 
 }
