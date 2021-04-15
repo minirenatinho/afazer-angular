@@ -12,12 +12,14 @@ import { Item } from '../item';
 export class EditItemModalComponent implements OnInit {
 
   @Input() titleInput: string;
+  @Input() descriptionInput?: string;
 
   constructor(
     private afazerApi: AfazerApiService,
     private matDialogRef: MatDialogRef<EditItemModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { item: Item }) {
       this.titleInput = data.item.title;
+      this.descriptionInput = data.item.description;
     }
 
   ngOnInit(): void {
@@ -25,6 +27,7 @@ export class EditItemModalComponent implements OnInit {
 
   saveChanges(){
     this.data.item.title = this.titleInput;
+    this.data.item.description = this.descriptionInput;
 
     this.afazerApi.editItem(this.data.item).subscribe(() => {
       this.matDialogRef.close();
@@ -37,6 +40,7 @@ export class EditItemModalComponent implements OnInit {
 
   deleteItem() {
     this.data.item.title = this.titleInput;
+    this.data.item.description = this.descriptionInput;
 
     this.afazerApi.deleteItem(this.data.item._id).subscribe(() => {
       this.matDialogRef.close();

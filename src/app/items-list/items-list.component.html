@@ -4,6 +4,6 @@
 <div id='itemsList'>
     <div id='itemDiv' *ngFor='let item of itemsList' (click)='editItem(item)'>
         <h2>{{item.title}}</h2>
-        <p>[Created: {{item.createdAt}} | Last Update: {{item.updatedAt}}]</p>
+        <p>{{item.description}}</p>
     </div>
 </div>

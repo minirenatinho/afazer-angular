@@ -1,6 +1,8 @@
 <input id='titleInputModal' name='titleInputModal' [(ngModel)]='titleInput' (keyup.enter)='saveChanges()' />
-    <div class='buttons'>
-        <button id='save-button' class='button' mat-button (click)='saveChanges()'>SAVE</button>
-        <button id='discard-button' class='button' mat-button (click)='discardChanges()'>DISCARD CHANGES</button>
-        <button id='delete-button' class='button' (click)='deleteItem()'>DELETE</button>
+<textarea id='descriptionInputModal' name='descriptionInputModal' [(ngModel)]='descriptionInput' (keyup.enter)='saveChanges()' ></textarea>
+<p>Updated: {{data.item.updatedAt}}  |  Created: {{data.item.createdAt}}</p>
+<div class='buttons'>
+    <button id='save-button' class='button' mat-button (click)='saveChanges()'>SAVE</button>
+    <button id='discard-button' class='button' mat-button (click)='discardChanges()'>DISCARD CHANGES</button>
+    <button id='delete-button' class='button' (click)='deleteItem()'>DELETE</button>
 </div>

@@ -1,8 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 
 .custom-dialog-container .mat-dialog-container {
-    background: rgba(0, 0, 0, 0.493);
+    background: rgba(0, 0, 0, 0.808);
+    border-radius: 20px;
 }
 
 html, body { height: 100%; }
 body { margin: 0; }
+
+input {
+    background: transparent;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+    outline: none;
+    width: 98%;
+    min-height: 30px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+button {
+    background: rgba(255, 255, 255, 0.158);
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 20px;
+}
