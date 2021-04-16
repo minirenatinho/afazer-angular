@@ -1,5 +1,5 @@
-<input id='titleInputModal' name='titleInputModal' [(ngModel)]='titleInput' (keyup.enter)='saveChanges()' />
-<textarea id='descriptionInputModal' name='descriptionInputModal' [(ngModel)]='descriptionInput' (keyup.enter)='saveChanges()' ></textarea>
+<input id='titleInputModal' name='titleInputModal' [(ngModel)]='titleInput' />
+<textarea id='descriptionInputModal' name='descriptionInputModal' [(ngModel)]='descriptionInput' ></textarea>
 <p>Updated: {{data.item.updatedAt}}  |  Created: {{data.item.createdAt}}</p>
 <div class='buttons'>
     <button id='save-button' class='button' mat-button (click)='saveChanges()'>SAVE</button>

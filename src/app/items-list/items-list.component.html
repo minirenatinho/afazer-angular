@@ -1,5 +1,4 @@
-<input id='titleInput' name='titleInput' [(ngModel)]='titleInput' (keyup.enter)='addItem()' placeholder='type a task' />
-<button (click)='addItem()'>+</button>
+<button (click)='addItem()'> + </button>
 
 <div id='itemsList'>
     <div id='itemDiv' *ngFor='let item of itemsList' (click)='editItem(item)'>

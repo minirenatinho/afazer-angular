@@ -42,7 +42,7 @@ export class EditItemModalComponent implements OnInit {
     this.data.item.title = this.titleInput;
     this.data.item.description = this.descriptionInput;
 
-    this.afazerApi.deleteItem(this.data.item._id).subscribe(() => {
+    this.afazerApi.deleteItem(this.data.item._id!).subscribe(() => {
       this.matDialogRef.close();
     });
   }
