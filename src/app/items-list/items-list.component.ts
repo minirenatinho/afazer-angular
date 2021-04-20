@@ -27,8 +27,8 @@ export class ItemsListComponent implements OnInit {
 
   listItems(){
     this.afazerApi.listItems().subscribe(items => {
-
-      let index = 0;
+      this.contextItemsList = [[]];
+      let index = 1;
       let found = false;
       items.result.map(item => {
         item.createdAt = new Date(item.createdAt!).toLocaleDateString();
@@ -38,20 +38,19 @@ export class ItemsListComponent implements OnInit {
         if (!item.context){
           this.contextItemsList[0].push(item);
         } else {
-          for(let i=0; i<index; ++i){
-            console.log(this.contextItemsList[i][0]);
-            console.log(item.context)
-            if (!found && this.contextItemsList[i][0].context == item.context){
+          for(let i=1; i<=index; ++i){
+            if (!found && this.contextItemsList[i] && this.contextItemsList[i][0].context == item.context){
               this.contextItemsList[i].push(item);
               found = true;
             }
           }
           if(!found){
-            ++index;
             this.contextItemsList[index] = [];
             this.contextItemsList[index].push(item);
+            ++index;
           }
         }
+        found = false;
       });
       console.log(this.contextItemsList);
       this.itemsList = items.result.reverse();
