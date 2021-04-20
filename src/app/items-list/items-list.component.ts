@@ -14,6 +14,7 @@ import { AddItemModalComponent } from '../add-item-modal/add-item-modal.componen
 export class ItemsListComponent implements OnInit {
 
   itemsList: Array<Item> = [];
+  contextItemsList: Array<Array<Item>> = [[]];
 
   constructor(
     private afazerApi: AfazerApiService,
@@ -26,10 +27,33 @@ export class ItemsListComponent implements OnInit {
 
   listItems(){
     this.afazerApi.listItems().subscribe(items => {
+
+      let index = 0;
+      let found = false;
       items.result.map(item => {
         item.createdAt = new Date(item.createdAt!).toLocaleDateString();
         item.updatedAt = new Date(item.updatedAt!).toLocaleDateString();
+
+        //clustering items by context
+        if (!item.context){
+          this.contextItemsList[0].push(item);
+        } else {
+          for(let i=0; i<index; ++i){
+            console.log(this.contextItemsList[i][0]);
+            console.log(item.context)
+            if (!found && this.contextItemsList[i][0].context == item.context){
+              this.contextItemsList[i].push(item);
+              found = true;
+            }
+          }
+          if(!found){
+            ++index;
+            this.contextItemsList[index] = [];
+            this.contextItemsList[index].push(item);
+          }
+        }
       });
+      console.log(this.contextItemsList);
       this.itemsList = items.result.reverse();
     });
   }
