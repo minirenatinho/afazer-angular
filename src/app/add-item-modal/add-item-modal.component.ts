@@ -13,6 +13,7 @@ export class AddItemModalComponent implements OnInit {
 
   @Input() titleInput: string = '';
   @Input() descriptionInput?: string = '';
+  @Input() contextInput?: string = '';
 
   constructor(
     private afazerApi: AfazerApiService,
@@ -22,7 +23,7 @@ export class AddItemModalComponent implements OnInit {
   }
 
   save(){
-    this.afazerApi.addItem({ title: this.titleInput, email: 'email', description: this.descriptionInput }).subscribe(() => {
+    this.afazerApi.addItem({ title: this.titleInput, email: 'email', description: this.descriptionInput, context: this.contextInput }).subscribe(() => {
       this.matDialogRef.close();
     });
   }

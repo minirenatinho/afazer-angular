@@ -52,7 +52,6 @@ export class ItemsListComponent implements OnInit {
         }
         found = false;
       });
-      console.log(this.contextItemsList);
       this.itemsList = items.result.reverse();
     });
   }

@@ -17,6 +17,11 @@ input {
     border-radius: 20px;
 }
 
+#contextInputModal {
+    color: #fff;
+    background-color: rgba(238, 236, 98, 0.493);
+}
+
 button {
     width: 30%;
     margin-right: 20px;
