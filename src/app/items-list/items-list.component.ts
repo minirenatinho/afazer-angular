@@ -80,4 +80,10 @@ export class ItemsListComponent implements OnInit {
     });
   }
 
+  stylizeItem(context?: string ): string{
+    // TODO - Map context to style
+    if (context) return context;
+    return 'black';
+  }
+
 }
