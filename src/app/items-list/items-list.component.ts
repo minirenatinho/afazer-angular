@@ -15,11 +15,17 @@ export class ItemsListComponent implements OnInit {
 
   itemsList: Array<Item> = [];
   contextItemsList: Array<Array<Item>> = [[]];
+  contextColorMap: { context: Array<string>, color: Array<string> } = { context: [], color: [] };
 
   constructor(
     private afazerApi: AfazerApiService,
     private dialog: MatDialog
-  ) { }
+  ) {
+    this.contextColorMap = {
+      context: ['default', 'casa', 'estudo'],
+      color: ['orange', 'yellow', 'red']
+    };
+  }
 
   ngOnInit(): void {
     this.listItems();
@@ -81,9 +87,13 @@ export class ItemsListComponent implements OnInit {
   }
 
   stylizeItem(context?: string ): string{
-    // TODO - Map context to style
-    if (context) return context;
-    return 'black';
+    let color = this.contextColorMap.color[0];
+
+    this.contextColorMap.context.map((value, index, array) => {
+      if(value == context) color = this.contextColorMap.color[index];
+    });
+
+    return color;
   }
 
 }
