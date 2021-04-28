@@ -3,13 +3,13 @@
     font-weight: bold;
     font-size: 18px;
     outline: none;
-    width: 100%;
+    width: 98%;
     min-height: 100px;
     border-radius: 20px;
 }
 
 button {
-    width: 30%;
+    width: 47%;
     margin-right: 20px;
 }
 
@@ -21,8 +21,17 @@ button:hover {
     color: rgb(25, 190, 25);
 }
 
-#discard-button {
-    color: orange;
+#close-button {
+    float: right;
+    background: rgba(255, 255, 255, 0);
+    border: 0px;
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+#close-button:hover {
+    background-color: orange;
 }
 
 #delete-button {

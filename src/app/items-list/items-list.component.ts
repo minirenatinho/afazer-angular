@@ -64,6 +64,7 @@ export class ItemsListComponent implements OnInit {
 
   addItem(){
     const refDialog = this.dialog.open(AddItemModalComponent, {
+      disableClose: true,
       width: '100%',
       panelClass: 'custom-dialog-container'
     });

@@ -3,6 +3,7 @@
 .custom-dialog-container .mat-dialog-container {
     background: white;
     border-radius: 20px;
+    padding: 10px;
 }
 
 html, body { height: 100%; }

@@ -1,7 +1,8 @@
+<button id='close-button' mat-button (click)='discard()'>X</button>
+
 <input id='titleInputModal' name='titleInputModal' [(ngModel)]='titleInput' placeholder='Title'/>
 <textarea id='descriptionInputModal' name='descriptionInputModal' [(ngModel)]='descriptionInput' placeholder='Description'></textarea>
 <textarea id='contextInputModal' name='contextInputModal' [(ngModel)]='contextInput' placeholder='Context'></textarea>
 <div class='buttons'>
     <button id='save-button' class='button' mat-button (click)='save()'>SAVE</button>
-    <button id='discard-button' class='button' mat-button (click)='discard()'>DISCARD</button>
 </div>
