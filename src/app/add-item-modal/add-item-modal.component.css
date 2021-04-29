@@ -1,33 +1,31 @@
-#descriptionInputModal {
-    font-size: 18px;
-    width: 98%;
-    min-height: 100px;
-    border-radius: 20px;
-    margin-bottom: 10px;
-}
-
-button {
-    width: 98%;
-    margin-right: 20px;
-}
-
-button:hover {
-    background-color: rgba(255, 255, 255, 0.301);
-}
-
-#save-button {
-    color: rgb(25, 190, 25);
+.button {
+    width: 100%;
 }
 
 #close-button {
     float: right;
     background: rgba(255, 255, 255, 0);
     border: 0px;
-    width: 30px;
-    height: 30px;
+    width: 50px;
     margin-bottom: 10px;
 }
 
 #close-button:hover {
-    background-color: orange;
+    background-color: black;
+    color: white;
+}
+
+#descriptionInputModal {
+    font-size: 18px;
+    min-height: 100px;
+    margin-bottom: 10px;
+}
+
+#save-button {
+    color: rgb(25, 190, 25);
+}
+
+#save-button:hover {
+    background-color: rgb(25, 190, 25);;
+    color: white;
 }

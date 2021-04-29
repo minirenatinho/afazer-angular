@@ -14,15 +14,14 @@ input, textarea {
     font-weight: bold;
     font-size: 20px;
     outline: none;
-    width: 98%;
+    width: 99%;
     min-height: 30px;
     margin-bottom: 20px;
-    border-radius: 20px;
 }
 
 button {
     background: rgba(255, 255, 255, 0.158);
     font-weight: bold;
-    font-size: 20px;
+    font-size: 40px;
     border-radius: 20px;
 }

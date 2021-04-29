@@ -37,8 +37,8 @@ export class ItemsListComponent implements OnInit {
       let index = 1;
       let found = false;
       items.result.map(item => {
-        item.createdAt = new Date(item.createdAt!).toLocaleDateString();
-        item.updatedAt = new Date(item.updatedAt!).toLocaleDateString();
+        item.createdAt = new Date(item.createdAt!).toLocaleDateString('pt-br');
+        item.updatedAt = new Date(item.updatedAt!).toLocaleDateString('pt-br');
 
         //clustering items by context
         if (!item.context){

@@ -14,10 +14,13 @@ export class AddItemModalComponent implements OnInit {
   @Input() titleInput: string = '';
   @Input() descriptionInput?: string = '';
   @Input() contextInput?: string = '';
+  newDate: string;;
 
   constructor(
     private afazerApi: AfazerApiService,
-    private matDialogRef: MatDialogRef<EditItemModalComponent>) { }
+    private matDialogRef: MatDialogRef<EditItemModalComponent>) {
+      this.newDate = new Date().toLocaleDateString('pt-br');
+    }
 
   ngOnInit(): void {
   }
