@@ -1,28 +1,33 @@
 button {
-    margin-bottom: 10px;
-    font-size: 35px;
-    width: 50px;
+    position: fixed;
+    bottom: 10%;
+    right: 6%;
+    font-size: 80px;
+    width: 90px;
+    border: 0px;
+    border-radius: 100%;
+    background-color: orange;
+    color: white;
 }
 
 button:hover {
-    background-color: orange;
-    font-size: 40px;
-    width: 55px;
+    font-size: 100px;
+    width: 110px;
+}
+
+#itemsList {
+    margin-top: 20px;
 }
 
 #itemDiv {
-    padding: 1px 0px 10px 0px;
+    padding: 0px 0px 10px 0px;
     float: left;
     width: 20%;
     height: 200px;
     overflow: hidden;
+    margin-bottom: 20px;
 }
 
 #itemDiv:hover {
-    background-color: orange;
-}
-
-#titleInput {
-    margin-top: 25px;
-    margin-bottom: 25px;
+    background-color: rgba(255, 166, 0, 0.616);
 }

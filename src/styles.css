@@ -20,7 +20,6 @@ input, textarea {
 }
 
 button {
-    background: rgba(255, 255, 255, 0.158);
     font-weight: bold;
     font-size: 40px;
     border-radius: 20px;
