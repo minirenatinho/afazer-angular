@@ -4,15 +4,16 @@ button {
     right: 6%;
     font-size: 80px;
     width: 90px;
-    border: 0px;
+    border-width: 5px;
     border-radius: 100%;
-    background-color: orange;
-    color: white;
+    border-color: orange;
+    background-color: white;
+    color: orange;
 }
 
 button:hover {
-    font-size: 100px;
-    width: 110px;
+    background-color: orange;
+    color: white;
 }
 
 #itemsList {
