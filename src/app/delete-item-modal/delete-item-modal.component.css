@@ -1,0 +1,25 @@
+h1 {
+    text-align: center;
+}
+
+.button {
+    width: 50%;
+}
+
+#cancel-button {
+    color: gray;
+}
+
+#cancel-button:hover {
+    background-color: gray;
+    color: white;
+}
+
+#delete-button {
+    color: rgb(214, 29, 29);
+}
+
+#delete-button:hover {
+    background-color: rgb(214, 29, 29);
+    color: white;
+}

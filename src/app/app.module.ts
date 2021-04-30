@@ -10,13 +10,15 @@ import { AppComponent } from './app.component';
 import { ItemsListComponent } from './items-list/items-list.component';
 import { EditItemModalComponent } from './edit-item-modal/edit-item-modal.component';
 import { AddItemModalComponent } from './add-item-modal/add-item-modal.component';
+import { DeleteItemModalComponent } from './delete-item-modal/delete-item-modal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemsListComponent,
     EditItemModalComponent,
-    AddItemModalComponent
+    AddItemModalComponent,
+    DeleteItemModalComponent
   ],
   imports: [
     BrowserModule,

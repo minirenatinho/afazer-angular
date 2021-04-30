@@ -1,7 +1,8 @@
 import { Component, Inject, OnInit, Input } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { AfazerApiService } from '../afazer-api.service';
+import { DeleteItemModalComponent } from '../delete-item-modal/delete-item-modal.component';
 import { Item } from '../item';
 
 @Component({
@@ -17,6 +18,7 @@ export class EditItemModalComponent implements OnInit {
 
   constructor(
     private afazerApi: AfazerApiService,
+    private dialog: MatDialog,
     private matDialogRef: MatDialogRef<EditItemModalComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { item: Item }) {
       this.titleInput = data.item.title;
@@ -41,13 +43,16 @@ export class EditItemModalComponent implements OnInit {
     this.matDialogRef.close();
   }
 
-  deleteItem() {
-    this.data.item.title = this.titleInput;
-    this.data.item.description = this.descriptionInput;
-    this.data.item.context = this.contextInputModal;
+  openDeleteModal() {
+    const refDialog = this.dialog.open(DeleteItemModalComponent, {
+      disableClose: true,
+      width: '50%',
+      panelClass: 'custom-dialog-container',
+      data: this.data
+    });
 
-    this.afazerApi.deleteItem(this.data.item._id!).subscribe(() => {
-      this.matDialogRef.close();
+    refDialog.afterClosed().subscribe(result => {
+      if(result == 'delete') this.matDialogRef.close();
     });
   }
 
