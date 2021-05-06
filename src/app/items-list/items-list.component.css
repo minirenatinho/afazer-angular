@@ -1,8 +1,5 @@
 button {
     position: fixed;
-    bottom: 10%;
-    right: 6%;
-    font-size: 75px;
     width: 90px;
     border-width: 5px;
     border-radius: 100%;
@@ -16,8 +13,31 @@ button:hover {
     color: white;
 }
 
+#addButton {
+    font-size: 75px;
+    bottom: 10%;
+    right: 6%;
+}
+
+#separateButton {
+    font-size: 30px;
+    bottom: 10%;
+    right: 16%;
+}
+
 #itemsList {
     margin-top: 20px;
+}
+
+#headText {
+    color: white;
+    font-weight: bold;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-size: 14px;
+}
+
+#invisible {
+    color: transparent;
 }
 
 #itemDiv {

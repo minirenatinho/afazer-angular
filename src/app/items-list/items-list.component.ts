@@ -13,9 +13,9 @@ import { AddItemModalComponent } from '../add-item-modal/add-item-modal.componen
 })
 export class ItemsListComponent implements OnInit {
 
-  itemsList: Array<Item> = [];
   contextItemsList: Array<Array<Item>> = [[]];
   contextColorMap: { context: Array<string>, color: Array<string> } = { context: [], color: [] };
+  separateItems: boolean = true;
 
   constructor(
     private afazerApi: AfazerApiService,
@@ -58,7 +58,8 @@ export class ItemsListComponent implements OnInit {
         }
         found = false;
       });
-      this.itemsList = items.result.reverse();
+
+      this.contextItemsList = this.contextItemsList.reverse();
     });
   }
 
@@ -87,6 +88,11 @@ export class ItemsListComponent implements OnInit {
     });
   }
 
+  stylizeList(): string{
+    if(this.separateItems) return 'flow-root';
+    return 'blocks';
+  }
+
   stylizeItem(context?: string ): string{
     let color = this.contextColorMap.color[0];
 
@@ -95,6 +101,11 @@ export class ItemsListComponent implements OnInit {
     });
 
     return color;
+  }
+
+  changeItemsOrganization() {
+    this.separateItems = !this.separateItems;
+    this.listItems();
   }
 
 }

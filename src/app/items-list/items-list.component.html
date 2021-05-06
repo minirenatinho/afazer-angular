@@ -1,9 +1,16 @@
-<button (click)='addItem()'> + </button>
+<button id='addButton' (click)='addItem()'> + </button>
+<button id='separateButton' (click)='changeItemsOrganization()'>&#9649;&#9649;</button>
 
 <div id='itemsList'>
-    <div id='itemDiv' *ngFor='let item of itemsList' (click)='editItem(item)'>
-        <div [style.background-color]='stylizeItem(item.context)'>{{item.context}}</div>
-        <h2>{{item.title}}</h2>
-        <p>{{item.description}}</p>
+    <div [style.display]='stylizeList()' *ngFor='let itemsList of contextItemsList'>
+        <div id='itemDiv' *ngFor='let item of itemsList' (click)='editItem(item)'>
+            <div [style.background-color]='stylizeItem(item.context)'>
+                <span id='headText' *ngIf='itemsList.indexOf(item) == 0'>{{item.context | uppercase}}</span>
+                <span id='invisible' *ngIf='item.context'>i</span>
+            </div>
+            <br *ngIf='!item.context'/>
+            <h2>{{item.title}}</h2>
+            <p>{{item.description}}</p>
+        </div>
     </div>
 </div>
